@@ -1,8 +1,10 @@
 services:
   zenfeed-web:
-    image: glidea/zenfeed-web:latest
+    build:
+      context: ./zenfeed-web
+      dockerfile: Dockerfile
     ports:
-      - "1400:1400"
+      - "1401:80"
     environment:
       - PUBLIC_DEFAULT_API_URL=http://zenfeed:1300
     depends_on:
